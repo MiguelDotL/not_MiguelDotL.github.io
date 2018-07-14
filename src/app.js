@@ -1,4 +1,6 @@
 import './assets/scss/style.scss';
+import './assets/js/scroll.js';
+import './assets/js/nav.js';
 import $ from "jquery";
 
 console.log('Hello World!');

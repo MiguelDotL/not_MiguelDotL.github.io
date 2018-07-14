@@ -7,9 +7,14 @@ body {
   font-size: 62.5%;
   /*margin: 0;
   padding: 0;*/
-  /*background-image: url('../images/white_desk.jpg');
-  background-attachment: fixed;*/
-
+  @include media("<desktop") {
+    background-image: url('../images/white_desk.jpg');
+    background-attachment: fixed;
+    background-position-x: 85%;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .container {
@@ -82,6 +87,9 @@ img.bg {
   // override normalize styles
   max-height: initial;
   max-width: initial;
+  @include media('<desktop') {
+    display: none;
+  }
 }
 
 
@@ -92,28 +100,42 @@ img.bg {
 header.navbar {
   background-image: url('../images/white_desk.jpg');
   background-size: cover;
-  /*background: #529abb;*/
-  /*background: rgba(255, 255, 255, 1);*/
-  /*height: 200px;*/
   display: block;
   height: 12em;
   width: 100%;
   position: fixed;
   z-index: 9999;
+  transition: transform 0.3s ease-in-out;
+}
+header.navbar > div, 
+header.navbar > nav {
+  z-index: 10;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 1.05rem;
+  right: 2rem;
+  @include media('<desktop') {
+    display: block;
+  }
+
 }
 
 /*----------------Logo+Name----------------*/
 
 img.logo {
-
+  
   float: left;
   height: 6em;
   width: 6em;
-
+  
   padding: 2rem 2rem;
 }
 
 .name {
+  @extend %transition;
   /*background-color: #0C7;*/
   /*height: 200px;*/
   float: left;
@@ -121,6 +143,10 @@ img.logo {
   /*position: relative;*/
   /*top: 50px;*/
   width: 28rem;
+  @include media('<=phone'){
+    width:auto;
+    height:100%;
+  }
 }
 
 .name > h1 {
@@ -138,12 +164,13 @@ img.logo {
   position: relative;
   bottom: -16px;
   z-index: 1;*/
+  @include media('<=phone'){
+    display: none;
+  }
 }
 
 .name span {
   font-weight: 400;
-
-
 }
 
 /*----------------Menu----------------*/
@@ -164,6 +191,9 @@ nav {
   /*position: absolute;*/
     /*bottom: 0;*/
   /*width:inherit;*/
+  @include media('<desktop') {
+    display: none;
+  }
 }
 
 nav > ul {
@@ -239,6 +269,47 @@ nav > ul > li > a:hover {
   color: #111;
   font-weight: bold;
 }
+.mobile-nav {
+  // display: none;
+  // position: absolute;
+  top: -100%;
+  left: 0;
+  transition: top 0.3s ease-in-out;
+  &.is-active {
+    top: 0%;
+  }
+  @include media('<desktop') {
+    display: block;
+    background-color: darkgray;
+    position: fixed;
+    width: 100vw;
+    margin-top: 6rem;
+    padding: .8rem 0;
+    z-index: 1;
+    // box-shadow: 0px 1px 10px #999;
+    // display: none !important;
+    // &.is-active {
+    //   display: block !important;
+    // }
+  }
+  @include media('<=phone') {
+    height: 100vh;
+  }
+  ul {
+    margin-top: 6rem;
+    padding: 0;
+    width: 100%;
+  } 
+  li {
+    @include media('<=phone') {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
 
 
 /*================================ABOUT-ME================================*/
@@ -289,8 +360,9 @@ nav > ul > li > a:hover {
 
 /* hide back of pane during swap */
 .card-front, .card-back {
+  @extend %transition;
   backface-visibility: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 
   position: absolute;
   top: 0;
@@ -306,7 +378,11 @@ nav > ul > li > a:hover {
 
 /* back, initially hidden pane */
 .card-back {
+  @extend %no-select;
   transform: rotateY(180deg);
+}
+.flipper:hover .card-front {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /*----------------Card-Shadows----------------*/
@@ -315,7 +391,7 @@ nav > ul > li > a:hover {
 	width:70%;
 	height:200px;
 	background:#FFF;
-	margin:40px auto;
+	padding:40px auto;
 }*/
 
 .card-shadow {
@@ -342,6 +418,10 @@ nav > ul > li > a:hover {
 #skills {
   margin: 4rem 15% 0 15% ;
   padding: 8rem;
+  @include media('<tablet') {
+    margin: 4rem auto 0;
+    padding: 8rem 0 0;
+  }
 }
 
 ul.cards {
@@ -397,7 +477,7 @@ div:hover {
 #html5 span.devicons {
   transition: color 0.5s ease;
 }
-#html5 span.devicons:hover {
+#html5 .card-front:hover span.devicons {
   color: #F16529;
 }
 #html5 .card-back {
@@ -408,7 +488,7 @@ div:hover {
 #css3 span.devicons {
   transition: color 0.5s ease;
 }
-#css3 span.devicons:hover {
+#css3 .card-front:hover span.devicons {
   color: #33A9DC;
 }
 #css3 .card-back {
@@ -416,32 +496,43 @@ div:hover {
   background-color: #33A9DC;
 }
 
+#sass span.devicons {
+  transition: color 0.5s ease;
+}
+#sass .card-front:hover span.devicons {
+  color: $scss;
+}
+#sass .card-back {
+  color:#fff;
+  background-color: $scss;
+}
+
 #ruby span.devicons {
   transition: color 0.5s ease;
 }
-#ruby span.devicons:hover {
-  color: #940C00;
+#ruby .card-front:hover span.devicons {
+  color: $ruby;
 }
 #ruby .card-back {
   color:#fff;
-  background-color: #940C00;
+  background-color: $ruby;
 }
 
 #rails span.devicons {
   transition: color 0.5s ease;
 }
-#rails span.devicons:hover {
-  color: #940C00;
+#rails .card-front:hover span.devicons {
+  color: $ruby;
 }
 #rails .card-back {
   color:#fff;
-  background-color: #940C00;
+  background-color: $ruby;
 }
 
 #jQuery span.devicons {
   transition: color 0.5s ease;
 }
-#jQuery span.devicons:hover {
+#jQuery .card-front:hover span.devicons {
   color: #79CEF5;
 }
 #jQuery .card-back {
@@ -452,29 +543,62 @@ div:hover {
 #js span.devicons {
   transition: color 0.5s ease;
 }
-#js span.devicons:hover {
-  color: #E5BB31;
+#js .card-front:hover span.devicons {
+  color: $js;
 }
 #js .card-back {
   color:#000;
-  background-color: #E5BB31;
+  background-color: $js;
+}
+
+#typescript span.devicons {
+  transition: color 0.5s ease;
+}
+#typescript .card-front:hover span.devicons {
+  color: $ts;
+}
+#typescript .card-back {
+  color:#000;
+  background-color: $ts;
 }
 
 #nodejs span.devicons {
   transition: color 0.5s ease;
 }
-#nodejs span.devicons:hover {
-  color: #669F64;
+#nodejs .card-front:hover span.devicons {
+  color: $node;
 }
 #nodejs .card-back {
   color:#000;
-  background-color: #669F64;
+  background-color: $node;
+}
+
+#webpack span.devicons {
+  transition: color 0.5s ease;
+}
+#webpack .card-front:hover span.devicons {
+  color: $webpack;
+}
+#webpack .card-back {
+  color:#000;
+  background-color: $webpack;
+}
+
+#mongoDb span.devicons {
+  transition: color 0.5s ease;
+}
+#mongoDb .card-front:hover span.devicons {
+  color: $mongo;
+}
+#mongoDb .card-back {
+  color:#000;
+  background-color: $mongo;
 }
 
 #pSQL span.devicons {
   transition: color 0.5s ease;
 }
-#pSQL span.devicons:hover {
+#pSQL .card-front:hover span.devicons {
   color: #336791;
 }
 #pSQL .card-back {
@@ -485,18 +609,7 @@ div:hover {
 #adobePS span.devicons {
   transition: color 0.5s ease;
 }
-#adobePS span.devicons:hover {
-  color: #82BCFB;
-}
-#adobePS .card-back {
-  color:#000;
-  background-color: #82BCFB;
-}
-
-#adobePS span.devicons {
-  transition: color 0.5s ease;
-}
-#adobePS span.devicons:hover {
+#adobePS .card-front:hover span.devicons {
   color: #82BCFB;
 }
 #adobePS .card-back {
@@ -507,12 +620,34 @@ div:hover {
 #adobeAI span.devicons {
   transition: color 0.5s ease;
 }
-#adobeAI span.devicons:hover {
+#adobeAI .card-front:hover span.devicons {
   color: #E16B17;
 }
 #adobeAI .card-back {
   color:#000;
   background-color: #E16B17;
+}
+
+#angular span.devicons {
+  transition: color 0.5s ease;
+}
+#angular .card-front:hover span.devicons {
+  color: $angular;
+}
+#angular .card-back {
+  color:#000;
+  background-color: $angular;
+}
+
+#react span.devicons {
+  transition: color 0.5s ease;
+}
+#react .card-front:hover span.devicons {
+  color: $react;
+}
+#react .card-back {
+  color:#000;
+  background-color: $react;
 }
 
 
@@ -525,8 +660,8 @@ div:hover {
 section#contact {
   background: #222;
   color: #CCC;
-  height: 48em;
-  padding: 8rem 0 0 0;
+  height: 50em;
+  padding: 5rem 0 6rem 0;
   text-align: center;
   text-transform: uppercase;
 }
@@ -738,26 +873,34 @@ footer p span {
     margin-left: -512px;   /* 50% */
   }
   
-  div.name {
-    float: none;
-    text-align: center;
-  }
-  
   header.navbar {
     background: #eee;
     background-image: none;
     background-size: auto;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.5);
+    height: 6rem;
   }
   
+  div.name {
+    float: none;
+    text-align: center;
+    transform: scale(0.8);
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+  }
+
   #aboutMe {
     padding-top: 8em;
-    
   }
 }
 
 @media screen and (max-width: 1200px) {
+
   #skills {
     // margin: 4rem 15% 0 15% ;
-    padding: 8rem 4rem;
+    // padding: 8rem 4rem;
   }
+
+
 }

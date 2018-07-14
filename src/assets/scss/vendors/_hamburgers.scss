@@ -14,7 +14,7 @@ $hamburger-padding-y                       : 15px !default;
 $hamburger-layer-width                     : 40px !default;
 $hamburger-layer-height                    : 4px !default;
 $hamburger-layer-spacing                   : 6px !default;
-// $hamburger-layer-color                     : #000 !default;
+$hamburger-layer-color                     : #000 !default;
 $hamburger-layer-color                     : $accent-color !default;
 $hamburger-layer-border-radius             : 4px !default;
 $hamburger-hover-opacity                   : 0.7 !default;
@@ -52,13 +52,13 @@ $hamburger-types: (
   // minus,
   // slider,
   // slider-r,
-  // spin,
-  // spin-r,
+  spin,
+  spin-r,
   // spring,
   // spring-r,
   // stand,
   // stand-r,
-  squeeze,
+  // squeeze,
   // vortex,
   // vortex-r
 ) !default;
@@ -91,13 +91,13 @@ $hamburger-types: (
 // @import "hamburgers/minus";
 // @import "hamburgers/slider";
 // @import "hamburgers/slider-r";
-// @import "hamburgers/spin";
-// @import "hamburgers/spin-r";
+@import "hamburgers/spin";
+@import "hamburgers/spin-r";
 // @import "hamburgers/spring";
 // @import "hamburgers/spring-r";
 // @import "hamburgers/stand";
 // @import "hamburgers/stand-r";
-@import "hamburgers/squeeze";
+// @import "hamburgers/squeeze";
 // @import "hamburgers/vortex";
 // @import "hamburgers/vortex-r";
 

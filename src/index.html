@@ -23,25 +23,27 @@
         rel="stylesheet">
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   <!-- Icons -->
-  <!-- <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png"> -->
-  <link rel="icon" type="image/png" sizes="192x192"  href="./favicons/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
-  <link rel="manifest" href="./favicons/manifest.json">
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png"> -->
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/manifest.json">
   <meta name="msapplication-config" content="./browserconfig.xml" />
   <meta name="msapplication-TileColor" content="#0897C7">
-  <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
   <meta name="theme-color" content="#0897C7">
 
 
@@ -55,10 +57,16 @@
     <div class="name">
       <img src="./assets/images/attached_1024.png" alt="MLogo" class="logo">
       <h1><span>Miguel</span> Lozano</h1>
-      <!-- <h2>Full Stack Developer</h2> -->
+      <!-- <h2>Full Stack Develop1er</h2> -->
     </div>
 
-    <nav> <!-- Nav-Bar -->
+    <button id="hamburger" class="hamburger hamburger--spin" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <nav id="#navMenu"> <!-- Nav-Bar -->
       <ul class="clean-list">
         <li><a class="scroll" href="#aboutMe" >About Me</a></li>
         <li><a class="scroll" href="#skills">Skills</a></li>
@@ -67,6 +75,13 @@
     </nav>
     <div class="clearfix"></div>
   </header>
+  <nav id="mobileNav" class="mobile-nav"> <!-- Nav-Bar -->
+    <ul class="clean-list">
+      <li><a class="scroll" href="#aboutMe" >About Me</a></li>
+      <li><a class="scroll" href="#skills">Skills</a></li>
+      <li><a class="scroll" href="#contact" >Contact</a></li>
+    </ul>
+  </nav>
 
   <img src="./assets/images/white_desk.jpg" alt="" class="bg">
 
@@ -84,13 +99,17 @@
 
 
     <section id="skills">
+
+      <!-- Proficient. -->
+      <!-- Comfortable. -->
+      <!-- Familiar. -->
       <hl class="title-text">Skills</hl>
       <ul class="clean-list cards">
         <li id="html5">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span class="devicons devicons-html5"></span>
+                <span class="devicons devicon-html5-plain"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">HTML5</h1>
@@ -102,7 +121,7 @@
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span class="devicons devicons-css3"></span>
+                <span class="devicons devicon-css3-plain"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">CSS3</h1>
@@ -110,11 +129,24 @@
             </div>
           </div>
         </li>
+        <li id="sass">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-sass-original"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">SCSS</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
         <li  id="ruby">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span class="devicons devicons-ruby"></span>
+                <span class="devicons devicon-ruby-plain"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">Ruby</h1>
@@ -126,46 +158,10 @@
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span class="devicons devicons-ruby_on_rails"></span>
+                <span class="devicons devicon-rails-plain"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">Ruby on Rails</h1>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li id="jQuery">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="card-front">
-                <span  class="devicons devicons-jquery"></span>
-              </div>
-              <div class="card-back">
-                <h1 class="card-text">jQuery</h1>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li id="js">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="card-front">
-                <span class="devicons devicons-javascript_badge"></span>
-              </div>
-              <div class="card-back">
-                <h1 class="card-text">JavaScript</h1>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li id="nodejs">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="card-front">
-                <span class="devicons devicons-nodejs_small"></span>
-              </div>
-              <div class="card-back">
-                <h1 class="card-text">Node.js</h1>
               </div>
             </div>
           </div>
@@ -174,7 +170,7 @@
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span  class="devicons devicons-postgresql"></span>
+                <span  class="devicons devicon-postgresql-plain"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">PostgreSQL</h1>
@@ -182,11 +178,86 @@
             </div>
           </div>
         </li>
+
+        <li id="js">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-javascript-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">JavaScript</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="typescript">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-typescript-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">TypeScript</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="jQuery">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span  class="devicons devicon-jquery-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">jQuery</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li id="nodejs">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-nodejs-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Node.js</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="webpack">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-webpack-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Webpack</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="mongoDb">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-mongodb-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">mongoDB</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
         <li id="adobePS">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span class="devicons devicons-photoshop"></span>
+                <span class="devicons devicon-photoshop-line"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">Adobe Photoshop</h1>
@@ -198,7 +269,7 @@
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
               <div class="card-front">
-                <span class="devicons devicons-illustrator"></span>
+                <span class="devicons devicon-illustrator-line"></span>
               </div>
               <div class="card-back">
                 <h1 class="card-text">Adobe Illustrator</h1>
@@ -206,6 +277,32 @@
             </div>
           </div>
         </li>
+
+        <li id="angular">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-angularjs-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Angular</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="react">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-react-original"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">React</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
       </ul>
     </section>
 
@@ -214,7 +311,7 @@
       <div class="container">
         <div class="left">
           <div class="avatar square">
-            <img src="./assets/images/avatar.png" alt="Miguel Lozano" class="avatar">
+            <img src="./assets/images/avatar.jpg" alt="Miguel Lozano" class="avatar">
           </div>
         </div>
         <div class="right">
