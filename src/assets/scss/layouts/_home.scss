@@ -660,10 +660,13 @@ div:hover {
 section#contact {
   background: #222;
   color: #CCC;
-  height: 50em;
+  height: 32rem;
   padding: 5rem 0 6rem 0;
   text-align: center;
   text-transform: uppercase;
+  @include media('<=420px') {
+    height: 36rem;
+  }
 }
 
 #contact .container {
@@ -671,14 +674,18 @@ section#contact {
   text-align: center;
   margin: 0 auto;
   padding: 3em 0 0 0;
-  width: 30em;
+  width: 17.8rem;
 }
 
 #contact .title-text {
   color: #CCC;
-  /*font-family: "Open Sans", sans-serif;*/
+  display: block;
+  // font-family: "Open Sans", sans-serif;
   position: relative;
   /*top: 5rem;*/
+  letter-spacing: .1rem;
+  // margin-bottom: 1rem;
+  padding: 0 2rem;
 }
 
 #contact .left {
@@ -839,27 +846,40 @@ div > img.avatar {
 
 footer {
   background: #000;
-  height: 5rem;
+  height: 6rem;
+  @include media('<phone') {
+    height:  7.2rem;
+    text-align: center;
+  }
 }
 
 footer .container {
   float:left;
-  padding: 0 2em;
-
+  padding: 2.4rem 2.5rem;
 }
 
-footer p {
+footer span {
   color: #666;
   font-size: 1.2em;
+  line-height: 1.5;
   font-family:"Montserrat", sans-serif;
   margin: 2rem 0 2rem 0;
 }
 
-footer p span {
-  color: #CCC;
-  // font-size: ;
+.footer-pipe {
+  @include media('<phone') {
+    display: none;
+  }
+}
+
+footer .footer-name {
   font-family:"Montserrat", sans-serif;
   font-weight: bold;
+  white-space: nowrap;
+  span { 
+    color: #CCC; 
+    font-size: 1em;
+  }
 }
 
 
