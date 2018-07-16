@@ -1,74 +1,77 @@
-const path = require('path'),
-webpack = require('webpack'),
-CleanWebpackPlugin = require('clean-webpack-plugin'),
-HtmlWebpackPlugin = require('html-webpack-plugin'),
-ExtractTextPlugin = require('extract-text-webpack-plugin');
+  const path = require('path'),
+  webpack = require('webpack'),
+  CleanWebpackPlugin = require('clean-webpack-plugin'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractPlugin = new ExtractTextPlugin({ filename: './assets/css/app.css' });
+  // const extractPlugin = new ExtractTextPlugin({ filename: './assets/css/app.css' });
+  const extractPlugin = new ExtractTextPlugin({ filename: 'style.css' });
 
-const config = {
+  const config = {
 
-context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'src'),
 
-entry: {
-app: './app.js'
-},
-
-output: {
-  path: path.resolve(__dirname, 'dist'),
-  filename: './assets/js/[name].bundle.js'
-},
-
-module: {
-rules: [
-
-  { test: /\.js$/, include: /src/, exclude: /node_modules/, use: { loader: "babel-loader", options: { presets: ['env'] } } },
-  { test: /\.html$/, use: ['html-loader'] },
-  {
-    test: /\.scss$/,
-    include: [path.resolve(__dirname, 'src', 'assets', 'scss')],
-    use: extractPlugin.extract({
-      use: [
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true
-          }
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true
-          }
-        }
-      ],
-      fallback: 'style-loader'
-    })
+  entry: {
+  app: './app.js'
   },
-  { test: /\.(jpg|png|gif|svg)$/, use: [ { loader: 'file-loader', options: { name: '[name].[ext]', outputPath: './assets/images/' } } ] },
-  { test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader'] }
 
-]
-},
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: './assets/js/[name].bundle.js'
+  },
 
-plugins: [
-  new CleanWebpackPlugin(['dist']),
-  new HtmlWebpackPlugin({
-    template: 'index.html'
-  }),
-  extractPlugin
-],
+  module: {
+  rules: [
 
-devServer: {
-  contentBase: path.resolve(__dirname, "./dist/assets/images"),
-  compress: true,
-  port: 5000,
-  stats: 'errors-only',
-  open: true
-},
+    { test: /\.js$/, include: /src/, exclude: /node_modules/, use: { loader: "babel-loader", options: { presets: ['env'] } } },
+    { test: /\.html$/, use: ['html-loader'] },
+    {
+      test: /\.scss$/,
+      include: [path.resolve(__dirname, 'src', 'assets', 'scss')],
+      use: extractPlugin.extract({
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ],
+        fallback: 'style-loader'
+      })
+    },
+    // { test: /\.(jpg|png|gif|svg)$/, use: [ { loader: 'file-loader', options: { name: '[path][name].[ext]', outputPath: './assets/images/' } } ] },
+    { test: /\.(jpg|png|gif|svg)$/, use: [ { loader: 'file-loader', options: { name: '[path][name].[ext]' } } ] },
+    // { test: /\.(jpg|png|gif|svg)$/, use: [ { loader: 'file-loader', options: { name: './assets/images/[name].[ext]'} } ] },
+    { test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader'] }
 
-devtool: 'inline-source-map'
+  ]
+  },
 
-};
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+    extractPlugin
+  ],
 
-module.exports = config;
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
+    compress: true,
+    port: 5000,
+    stats: 'errors-only',
+    open: true
+  },
+
+  devtool: 'inline-source-map'
+
+  };
+
+  module.exports = config;

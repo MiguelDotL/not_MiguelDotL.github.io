@@ -1,9 +1,367 @@
-<html>
-  <head>
-      <meta charset="UTF-8">
-      <title></title>
-  </head>
-   <body>
-      <h1>Trim static landing boilerplate! Booyah!</h1>
-   </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Style-Sheets -->
+  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
+  <!-- <link rel="stylesheet" href="css/devicons.css" type="text/css"> -->
+  <!-- Google-Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway'
+        rel='stylesheet' type='text/css'>
+  <!-- Font-Awesome -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png"> -->
+  <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/manifest.json">
+  <meta name="msapplication-config" content="./browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#0897C7">
+  <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#0897C7">
+
+
+
+  <title>Miguel Lozano</title>
+
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="name">
+      <img src="./assets/images/attached_1024.png" alt="MLogo" class="logo">
+      <h1><span>Miguel</span> Lozano</h1>
+      <!-- <h2>Full Stack Develop1er</h2> -->
+    </div>
+
+    <button id="hamburger" class="hamburger hamburger--spin" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <nav id="#navMenu"> <!-- Nav-Bar -->
+      <ul class="clean-list">
+        <li><a class="scroll" href="#aboutMe" >About Me</a></li>
+        <li><a class="scroll" href="#skills">Skills</a></li>
+        <li><a class="scroll" href="#contact" >Contact</a></li>
+      </ul>
+    </nav>
+    <div class="clearfix"></div>
+  </header>
+  <nav id="mobileNav" class="mobile-nav"> <!-- Nav-Bar -->
+    <ul class="clean-list">
+      <li><a class="scroll" href="#aboutMe" >About Me</a></li>
+      <li><a class="scroll" href="#skills">Skills</a></li>
+      <li><a class="scroll" href="#contact" >Contact</a></li>
+    </ul>
+  </nav>
+
+  <img src="./assets/images/white_desk.jpg" alt="" class="bg">
+
+
+  <div class="container main">
+    <section id="aboutMe">
+      <div class="wrapper">
+        <hl class="title-text">About Me</hl>
+        <p class="tagline hide-mobile"> ./ Designer / Developer / Programmer /</p>
+        <p class="tagline hide-desktop top"> ./ Designer /</p>
+        <p class="tagline hide-desktop"> ./ Developer /</p>
+        <p class="tagline hide-desktop bottom"> ./ Programmer /</p>
+        <p>Creating beautiful websites and applications that are fun to use.</p>
+        <p>South Florida Native and Digital Media Enthusiast.</p>
+        <p>Find me at the intersection of Art and Technology.</p>
+      </div>
+    </section>
+
+
+    <section id="skills">
+
+      <!-- Proficient. -->
+      <!-- Comfortable. -->
+      <!-- Familiar. -->
+      <hl class="title-text">Skills</hl>
+      <ul class="clean-list cards">
+        <li id="html5">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-html5-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">HTML5</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="css3">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-css3-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">CSS3</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="js">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+              <div class="flipper">
+                <div class="card-front">
+                  <span class="devicons devicon-javascript-plain"></span>
+                </div>
+                <div class="card-back">
+                  <h1 class="card-text">JavaScript</h1>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li id="typescript">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+              <div class="flipper">
+                <div class="card-front">
+                  <span class="devicons devicon-typescript-plain"></span>
+                </div>
+                <div class="card-back">
+                  <h1 class="card-text">TypeScript</h1>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+        <li id="sass">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-sass-original"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">SCSS</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li  id="ruby">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-ruby-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Ruby</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li  id="rails">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-rails-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Ruby on Rails</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="pSQL">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span  class="devicons devicon-postgresql-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">PostgreSQL</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="jQuery">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span  class="devicons devicon-jquery-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">jQuery</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="angular">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-angularjs-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Angular</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="react">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-react-original"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">React</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li id="nodejs">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-nodejs-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Node.js</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="webpack">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-webpack-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Webpack</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="mongoDb">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-mongodb-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">mongoDB</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="wordpress">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-wordpress-plain"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Wordpress</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li id="adobePS">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-photoshop-line"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Adobe Photoshop</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="adobeAI">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="card-front">
+                <span class="devicons devicon-illustrator-line"></span>
+              </div>
+              <div class="card-back">
+                <h1 class="card-text">Adobe Illustrator</h1>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="contact">
+      <hl class="title-text text-shadow">Contact Me</hl>
+      <div class="container">
+        <div class="left">
+          <div class="avatar square">
+            <img src="./assets/images/avatar.jpg" alt="Miguel Lozano" class="avatar">
+          </div>
+        </div>
+        <div class="right">
+          <ul class="clean-list social-icons icon-zoom">
+            <li><a href="mailto:miguel.d.lozano@gmail.com" ><i class="fa fa-envelope-o"></i></a></li>
+            <li><a href="https://twitter.com/MiguelDotL" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/MiguelDotL" target="_blank" ><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/MiguelDotL" target="_blank" ><i class="fa fa-github-alt"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+    <div class="clearfix"></div>
+    <footer>
+      <div class="container">
+        <span class="copyright">&copy; 2018 Ft. Lauderdale, Florida, USA</span>
+        <span class="footer-pipe">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <span class="footer-name">Designed by <span>Miguel Lozano</span></span>
+      </div>
+    </footer>
+      <!-- <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline">
+        <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li> <a href="#"><i class="fa fa-github-alt"></i></a></li>
+      </ul> -->
+  </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="./scripts/scroll.js" type="text/javascript"></script> -->
+
+
+</body>
 </html>

@@ -1,0 +1,75 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Base
+2.0 - Vendors
+    2.1 - Vendor Overrides
+3.0 - Components
+    3.1 - Atoms & Molecules
+4.0 - Layout
+    4.1 - Header
+    4.2 - Footer
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+1.0 Base
+--------------------------------------------------------------*/
+@import 'base/variables'; /* keep this first */
+@import 'base/functions';
+@import 'base/helpers';
+@import 'base/mixins';
+@import 'base/typography';
+@import 'base/devicons';
+
+
+/*--------------------------------------------------------------
+2.0 Vendors
+--------------------------------------------------------------*/
+// @import 'vendors/flexbox-grid';
+// @import 'vendors/icomoon';
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+@import 'vendors/animate';
+@import 'vendors/hamburgers';
+@import 'vendors/link-hover-effects';
+
+/*--------------------------------------------------------------
+2.1 Vendor Overrides
+--------------------------------------------------------------*/
+@import 'vendors/include-media-overrides';
+
+
+/*--------------------------------------------------------------
+3.0 Components
+--------------------------------------------------------------*/
+// @import 'components/buttons';
+// @import 'components/forms';
+// @import 'components/spinner';
+
+/*--------------------------------------------------------------
+3.1 Atoms & Molecules
+--------------------------------------------------------------*/
+// @import 'components/atoms-molecules';
+
+
+/*--------------------------------------------------------------
+4.0 Layout
+--------------------------------------------------------------*/
+// @import 'layouts/common'; /* keep this first */
+/* -------- pages -------- */
+// @import 'layouts/about';
+@import 'layouts/home';
+// @import 'layouts/contact';
+
+/*--------------------------------------------------------------
+4.1 Header
+--------------------------------------------------------------*/
+// @import 'layouts/header';
+
+/*--------------------------------------------------------------
+4.2 Footer
+--------------------------------------------------------------*/
+// @import 'layouts/footer';
+
+
