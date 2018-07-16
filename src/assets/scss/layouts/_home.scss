@@ -25,7 +25,7 @@ body {
 }
 .wrapper {
   display: block;
-  padding: 8rem 0 0 0;
+  padding: 8rem 4rem 0;
   /*margin: 0 15% ;*/
   width: 100%;
   /*z-index: 1;*/
@@ -120,7 +120,9 @@ header.navbar > nav {
   @include media('<desktop') {
     display: block;
   }
-
+  @include media('<=phone') {
+    right: 1rem;
+  }
 }
 
 /*----------------Logo+Name----------------*/
@@ -132,6 +134,13 @@ img.logo {
   width: 6em;
   
   padding: 2rem 2rem;
+  
+  @include media('<tablet'){
+    padding: 2rem 0rem;
+  }
+  @include media('<tablet'){
+    padding: 2rem 2rem;
+  }
 }
 
 .name {
@@ -270,7 +279,7 @@ nav > ul > li > a:hover {
   font-weight: bold;
 }
 .mobile-nav {
-  // display: none;
+  display: none;
   // position: absolute;
   top: -100%;
   left: 0;
@@ -318,7 +327,7 @@ nav > ul > li > a:hover {
 
 }
 
-#aboutMe h1{
+#aboutMe h1 {
   padding: 6rem 0 0rem 0;
 }
 
@@ -326,6 +335,18 @@ nav > ul > li > a:hover {
   font-family: "Roboto", sans-serif;
   font-size: 3.3em;
   line-height: 1.5;
+}
+
+#aboutMe .tagline {
+  font-weight: bold;
+}
+#aboutMe .wrapper .tagline.hide-desktop.top {
+  display:  block;
+  padding-top: 1rem !important;
+}
+#aboutMe .wrapper .tagline.hide-desktop.bottom {
+  display:  block;
+  padding-bottom: 1rem !important;
 }
 
 #aboutMe p:nth-child(2) {
@@ -416,11 +437,14 @@ nav > ul > li > a:hover {
 /*----------------Card-Attributes----------------*/
 
 #skills {
-  margin: 4rem 15% 0 15% ;
+  margin: 4rem auto 0;
   padding: 8rem;
+  @include media('<desktop') {
+    margin: 4rem 4% 0;
+    padding: 8rem 0 0;
+  }
   @include media('<tablet') {
     margin: 4rem auto 0;
-    padding: 8rem 0 0;
   }
 }
 
@@ -458,18 +482,6 @@ span.devicons {
   position: relative;
   top: 3rem;
 }
-
-/*.example {
-    transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
-}
-
-div {
-  transition: background-color 0.5s ease;
-  background-color: red;
-}
-div:hover {
-  background-color: green;
-}*/
 
 
 /*----------------Card-Colors----------------*/
@@ -558,7 +570,7 @@ div:hover {
   color: $ts;
 }
 #typescript .card-back {
-  color:#000;
+  color:#fff;
   background-color: $ts;
 }
 
@@ -569,7 +581,7 @@ div:hover {
   color: $node;
 }
 #nodejs .card-back {
-  color:#000;
+  color:#fff;
   background-color: $node;
 }
 
@@ -580,7 +592,7 @@ div:hover {
   color: $webpack;
 }
 #webpack .card-back {
-  color:#000;
+  color:#fff;
   background-color: $webpack;
 }
 
@@ -591,7 +603,7 @@ div:hover {
   color: $mongo;
 }
 #mongoDb .card-back {
-  color:#000;
+  color:#fff;
   background-color: $mongo;
 }
 
@@ -604,6 +616,17 @@ div:hover {
 #pSQL .card-back {
   color:#fff;
   background-color: #336791;
+}
+
+#wordpress span.devicons {
+  transition: color 0.5s ease;
+}
+#wordpress .card-front:hover span.devicons {
+  color: $wp;
+}
+#wordpress .card-back {
+  color:#fff;
+  background-color: $wp;
 }
 
 #adobePS span.devicons {
@@ -624,7 +647,7 @@ div:hover {
   color: #E16B17;
 }
 #adobeAI .card-back {
-  color:#000;
+  color:#fff;
   background-color: #E16B17;
 }
 
@@ -635,7 +658,7 @@ div:hover {
   color: $angular;
 }
 #angular .card-back {
-  color:#000;
+  color:#fff;
   background-color: $angular;
 }
 
@@ -923,4 +946,15 @@ footer .footer-name {
   }
 
 
+}
+
+.hide-desktop {
+  @include media('>=desktop') {
+    display: none !important;
+  }
+}
+.hide-mobile {
+  @include media('<desktop') {
+    display: none !important;
+  }
 }
